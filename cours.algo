@@ -1,0 +1,32 @@
+ALGORITHM letters_counter
+VAR
+    phrase : STRING 
+    n,mots,voyelles : INTEGER 
+    array : ARRAY_OF STRING[50];
+BEGIN
+
+    read(pharse)
+    n:=0
+    mots:=0
+
+    FOR i FROM 1 TO phrase.lenght STEP 1  DO
+        IF (pharse[i]='.') THEN
+            n:=phrase.lenght
+        ELSE
+            read("ceci n'est pas une pharse")
+        END_IF
+    END_FOR
+
+    FOR y FROM 1 TO phrase.lenght STEP 1  DO
+        FOR x FROM 1 TO phrase.lenght STEP 1  DO
+            IF (phrase[x]==array[y]) THEN
+                voyelles:= +1
+            END_IF
+        END_FOR
+    END_FOR
+
+    write("la longuer de la pharse est " : n)
+    write("la longeur de mots dans la phrase est ": mots)
+    write("le nombre de voyelle est " : voyelles)
+
+END

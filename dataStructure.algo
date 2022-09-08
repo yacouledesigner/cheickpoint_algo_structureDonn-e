@@ -1,0 +1,68 @@
+/*
+Structure de données linéaire chekpoint
+*/
+
+/*EXERCICE 1*/
+
+ALGORITHM sum_of_distincts_elements
+VAR
+    array1: ARRAY_OF INTEGER[5]
+    array2: ARRAY_OF INTEGER[5]
+    sum: INTEGER
+BEGIN
+    array1 := {1,2,3,5,7,8}
+    array2 := {10,2,6,5,9,8}
+    sum:=0
+
+    FOR i FROM O TO array1.lenght-1 STEP 1  DO
+        FOR x FROM 0 TO array2.lenght-1 STEP 1  DO
+            IF (array1[i] <> array2[x+1]) THEN
+                sum:=sum+array1[i]
+            END_IF
+        END_FOR
+    END_FOR
+
+     FOR i FROM O TO array2.lenght-1 STEP 1  DO
+        FOR x FROM 0 TO array1.lenght-1 STEP 1  DO
+            IF (array2[i] <> array1[x+1]) THEN
+                sum:=sum+array2[i]
+            END_IF
+        END_FOR
+    END_FOR
+
+    write(sum)
+END
+
+
+/*EXERCICE 2*/
+
+ALGORITHM sum_of_identical_elements
+VAR
+    array1: ARRAY_OF INTEGER[5]
+    array2: ARRAY_OF INTEGER[5]
+    sum: INTEGER
+BEGIN
+
+    array1 := {1,2,3,5,7,8}
+    array2 := {10,2,6,5,9,8}
+    sum:=0
+
+     FOR i FROM O TO array1.lenght STEP 1  DO
+        FOR x FROM 0 TO array2.lenght STEP 1  DO
+            IF (array1[i] == array2[x+1]) THEN
+                sum:=sum+array1[i]
+            END_IF
+        END_FOR
+    END_FOR
+
+    FOR i FROM O TO array2.lenght -1 STEP 1  DO
+        FOR x FROM 0 TO array1.lenght -1 STEP 1  DO
+            IF (array2[i] == array1[x+1]) THEN
+                sum:=sum+array2[i]
+            END_IF
+        END_FOR
+    END_FOR
+
+    write(sum)
+
+END
