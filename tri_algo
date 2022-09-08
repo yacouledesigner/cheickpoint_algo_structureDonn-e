@@ -1,0 +1,35 @@
+/*
+ALgorithm trie par insertion
+*/
+
+
+ALGORITHM trie_par_insertion
+VAR
+    array : ARRAY_OF INTEGER[5];
+    n,x,i,j:INTEGER
+BEGIN
+    read(array)
+    n:array.lenght
+
+    FOR i FROM 1 TO n-1 STEP 1  DO
+        x:=array[i]
+        j:=i
+            WHILE (j<0 AND array[j-1] > x) DO
+                array[j] := tab[j-1]
+                j:= j-1
+                array[j] := x
+            END_WHILE
+    END_FOR
+END
+
+/*
+Sorting
+*/
+
+ALGORITHM sorting
+VAR
+    array : ARRAY_OF INTEGER[5];
+BEGIN
+    trie_par_insertion(array)
+    write(array)
+END
